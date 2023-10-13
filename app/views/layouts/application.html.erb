@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%#= stylesheet_link_tag 'wind', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
+  </head>
+
+  <body class="bg-[--bg-color] text-[--text-color] font-poppins">
+    <header class="fixed top-0 left-0 w-full py-8 px-36 bg-transparent flex justify-between items-center z-50">
+      <a href="#" class="font-semibold text-[--text-color] text-2xl " >ldfavale</a>
+      <nav class="[&>a]:transition-all [&>a]:text-lg [&>a]:text-[--text-color] [&>a]:font-semibold [&>a]:ml-14 [&>a:hover]:text-[--main-color]">
+      <a href="#home" >Home</a>
+      <a href="#about" >About</a>
+      <a href="#education" >Education</a>
+      <a href="#skills" >Skills</a>
+      <a href="#contact" >Contact</a>
+
+      </nav>
+    </header>
+    <section id="home" class=" min-h-screen flex items-center py-0 px-[9%]">
+      <div class=" max-w-4xl ">
+        <h1 class=" text-5xl font-bold   leading-relaxed">Hi, i'm <span>Leonardo Favale</span></h1>
+        <div class="relative  max-w-lg">
+          <h3 class="  text-3xl font-bold text-[--main-color]  leading-loose" >Full Stack Developer</h3>
+          <p class=" mb-12" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum suscipit fugit repellat iste fugiat laborum recusandae, aspernatur numquam natus sunt, tempore vel sequi rerum nobis voluptatibus quas, a adipisci porro.</p>
+          <div class="relative flex justify-between w-80 h-16 ">
+            <a href="#" class="
+            before:content-['']
+            before:absolute
+            before:top-0
+            before:left-0
+            before:w-0
+            before:h-full
+            before:bg-[--bg-color]
+            before:-z-10
+            hover:before:w-full
+            hover:text-[--main-color]
+            before:transition-all
+            z-10
+            overflow-hidden
+            text-xl
+            font-semibold
+            text-[--bg-color]
+            relative
+            inline-flex
+            justify-center
+            items-center
+            w-36
+            h-full
+            bg-[--main-color]
+            border-[--main-color]
+            border-2
+            rounded-md">Hire me</a>
+           <a href="#" class="
+            before:content-['']
+            before:absolute
+            before:top-0
+            before:left-0
+            before:w-0
+            before:h-full
+            before:bg-[--main-color]
+            before:-z-10
+            hover:before:w-full
+            hover:text-[--bg-color]
+            before:transition-all
+            z-10
+            overflow-hidden
+            text-xl
+            font-semibold
+            text-[--main-color]
+            relative
+            inline-flex
+            justify-center
+            items-center
+            w-36
+            h-full
+            bg-[--bg-color]
+            border-[--main-color]
+            border-2
+            rounded-md">Let's talk</a> </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 w-44 flex justify-between">
+      <%
+        ["facebook","twitter","linkedin"].each do | social |
+      %>
+           <a  href="#" class="
+           relative
+           flex
+           justify-center
+           items-center
+           w-10 h-10
+           bg-transparent
+           text-[--main-color]
+           p-0 text-lg
+           border-2
+           border-[--main-color]
+           rounded-full
+           before:transition-all
+           before:content-['']
+           before:absolute
+           before:top-0
+           before:left-0
+           before:-z-10
+           overflow-hidden
+           before:bg-[--main-color]
+            before:h-full
+           before:w-0
+           hover:before:w-full
+           hover:text-[--bg-color]
+           ">
+            <i class='bx bxl-<%=social%>'></i>
+          </a>
+          <%# <a  href="#" class=" relative flex justify-center items-center w-10 h-10 bg-transparent text-[--main-color]  p-0 text-lg border-2 rounded-full border-[--main-color] before:content-[''] before:bg-red-500 before:overflow-hidden ">
+            <i class='bx bxl-twitter'></i>
+          </a>
+          <a  href="#" class=" relative flex justify-center items-center w-10 h-10 bg-transparent text-[--main-color]  p-0 text-lg border-2 rounded-full border-[--main-color] before:content-[''] before:bg-red-500 before:overflow-hidden ">
+            <i class='bx bxl-linkedin'></i>
+          </a> %>
+      <% end %>
+      </div>
+
+    </section>
+    <main class="">
+
+      <%= yield %>
+    </main>
+  </body>
+</html>
