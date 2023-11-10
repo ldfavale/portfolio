@@ -15,24 +15,30 @@
   </head>
 
   <body class="bg-[--bg-color] text-[--text-color] font-poppins">
-    <header class="fixed top-0 left-0 w-full py-8 px-36 bg-transparent flex justify-between items-center z-50">
-      <a href="#" class="font-semibold text-[--text-color] text-2xl " >ldfavale</a>
-      <nav class="[&>a]:transition-all [&>a]:text-lg [&>a]:text-[--text-color] [&>a]:font-semibold [&>a]:ml-14 [&>a:hover]:text-[--main-color]">
-      <a href="#home" >Home</a>
-      <a href="#about" >About</a>
-      <a href="#education" >Education</a>
-      <a href="#skills" >Skills</a>
-      <a href="#contact" >Contact</a>
+    <header class="static md:fixed top-0 left-0 w-full py-8 px-8 sm:px-16 md:px-20 lg:px-36 bg-transparent  flex flex-row  justify-between items-center z-50">
+      <a href="#" class="  font-semibold text-[--text-color] text-lg md:text-xl lg:text-2xl " >ldfavale</a>
+      <button  class='p-[0.6rem] pr-0  md:hidden transition-all '>
+        <svg class="w-5 h-4  text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor"  strokeWidth="1.7" d="M1 1h15M1 7h15M1 13h15"/>
+       </svg>
+      </button>
 
+      <nav class="  hidden md:flex md:flex-row [&>a]:transition-all md:[&>a]:text-base lg:[&>a]:text-lg [&>a]:text-[--text-color] [&>a]:font-semibold md:[&>a]:ml-7 lg:[&>a]:ml-14 [&>a:hover]:text-[--main-color]">
+        <a href="#home" >Home</a>
+        <a href="#about" >About</a>
+        <a href="#education" >Education</a>
+        <a href="#skills" >Skills</a>
+        <a href="#contact" >Contact</a>
       </nav>
-    </header>
-    <section id="home" class=" h-screen flex items-center py-0 px-[9%] bg-[url('./leo_favale.png')]   bg-no-repeat bg-[647px_701px_] bg-[right_80px_top_100px]  ">
-      <div class=" max-w-4xl ">
-        <h1 class=" text-5xl font-bold   leading-relaxed">Hi, i'm <span>Leo Favale</span></h1>
+     </header>
+   <%# bg-[url('./leo_favale_bn.png')] %>
+    <section id="home" class=" md:h-screen  flex flex-col md:flex-row  items-center  justify-center md:justify-between py-0 px-[7%] sm:px-[7%] lg:px-[9%]    bg-no-repeat bg-[607px_701px_] bg-[right_80px_top_100px]  ">
+      <div class=" md:w-1/2 order-1 ">
+        <h1 class=" text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold   leading-relaxed mb-2 md:mb-4">Hi, i'm <span>Leo Favale</span></h1>
         <div class="relative  max-w-lg">
-          <h3 class="  text-3xl font-bold text-[--main-color]  leading-loose" >Full Stack Developer</h3>
-          <p class=" mb-12" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum suscipit fugit repellat iste fugiat laborum recusandae, aspernatur numquam natus sunt, tempore vel sequi rerum nobis voluptatibus quas, a adipisci porro.</p>
-          <div class="relative flex justify-between w-80 h-16 ">
+          <h3 class=" text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-[--main-color]  leading-loose mb-4 md:mb-6" >Full Stack Developer</h3>
+          <p class="text-xs md:text-sm lg:text-base mb-12" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum suscipit fugit repellat iste fugiat laborum recusandae, aspernatur numquam natus sunt, tempore vel sequi rerum nobis voluptatibus quas, a adipisci porro.</p>
+          <div class="relative flex justify-between   w-64 md:w-72 lg:w-80 h-12 md:h-14 lg:h-16 ">
             <a href="#" class="
             before:content-['']
             before:absolute
@@ -47,14 +53,18 @@
             before:transition-all
             z-10
             overflow-hidden
-            text-xl
+            text-base
+            md:text-lg
+            lg:text-xl
             font-semibold
             text-[--bg-color]
             relative
             inline-flex
             justify-center
             items-center
-            w-36
+            w-28
+            md:w-32
+            lg:w-36
             h-full
             bg-[--main-color]
             border-[--main-color]
@@ -74,14 +84,17 @@
             before:transition-all
             z-10
             overflow-hidden
-            text-xl
+            md:text-lg
+            lg:text-xl
             font-semibold
             text-[--main-color]
             relative
             inline-flex
             justify-center
             items-center
-            w-36
+            w-28
+            md:w-32
+            lg:w-36
             h-full
             bg-[--bg-color]
             border-[--main-color]
@@ -89,7 +102,10 @@
             rounded-md">Let's talk</a> </div>
         </div>
       </div>
-      <div class="absolute bottom-8 w-44 flex justify-between">
+      <div class="mb-12 mt-8 md:mb-0 md:w-1/2  md:order-2 flex justify-start items-center lg:mt-10 xl:mt-20">
+        <img src="./assets/leo_favale_bn.png"   />
+      </div>
+  <div class="mt-24 mb-24 md:my-0 order-4 md:absolute bottom-8 w-44 flex justify-between">
       <%
         ["facebook","twitter","linkedin"].each do | social |
       %>
@@ -99,6 +115,7 @@
            justify-center
            items-center
            w-10 h-10
+           md:w-10 md:h-10
            bg-transparent
            text-[--main-color]
            p-0 text-lg
