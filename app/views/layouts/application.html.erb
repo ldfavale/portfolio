@@ -15,8 +15,8 @@
   </head>
 
   <body class="bg-[--bg-color] text-[--text-color] font-poppins">
-    <header class="static md:fixed top-0 left-0 w-full py-8 px-8 sm:px-16 md:px-20 lg:px-36 bg-transparent  flex flex-row  justify-between items-center z-50">
-      <a href="#" class="  font-semibold text-[--text-color] text-lg md:text-xl lg:text-2xl " >ldfavale</a>
+    <header id="header" class="static md:fixed top-0 left-0 w-full py-8 px-8 sm:px-16 md:px-20 lg:px-36 bg-transparent  flex flex-row  justify-between items-center z-50 transition-all">
+      <a href="#" class="  font-semibold text-[--text-color] text-lg md:text-xl lg:text-2xl " ><span class="text-[--main-color]">Ld</span>favale</a>
       <button  class='p-[0.6rem] pr-0  md:hidden transition-all '>
         <svg class="w-5 h-4  text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor"  strokeWidth="1.7" d="M1 1h15M1 7h15M1 13h15"/>
@@ -25,16 +25,15 @@
 
       <nav class="  hidden md:flex md:flex-row [&>a]:transition-all md:[&>a]:text-base lg:[&>a]:text-lg [&>a]:text-[--text-color] [&>a]:font-semibold md:[&>a]:ml-7 lg:[&>a]:ml-14 [&>a:hover]:text-[--main-color]">
         <a href="#home" >Home</a>
-        <a href="#about" >About</a>
-        <a href="#education" >Education</a>
         <a href="#skills" >Skills</a>
+        <a href="#education" >Education</a>
         <a href="#contact" >Contact</a>
       </nav>
      </header>
    <%# bg-[url('./leo_favale_bn.png')] %>
-    <section id="home" class=" md:h-screen  flex flex-col md:flex-row  items-center  justify-center md:justify-between py-0 px-[7%] sm:px-[7%] lg:px-[9%]    bg-no-repeat bg-[607px_701px_] bg-[right_80px_top_100px]  ">
+    <section id="home" class=" md:h-screen  flex flex-col md:flex-row  items-center  justify-center md:justify-between py-0 px-[7%] sm:px-[7%] lg:px-[9%]    bg-no-repeat bg-[607px_701px_] bg-[right_80px_top_100px] overflow-hidden ">
       <div class=" md:w-1/2 order-1 ">
-        <h1 class=" text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold   leading-relaxed mb-2 md:mb-4">Hi, i'm <span>Leo Favale</span></h1>
+        <h1 class=" text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold   leading-relaxed mb-2 md:mb-4"><span>Leonardo Favale</span></h1>
         <div class="relative  max-w-lg">
           <h3 class=" text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-[--main-color]  leading-loose mb-4 md:mb-6" >Full Stack Developer</h3>
           <p class="text-xs md:text-sm lg:text-base mb-12" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum suscipit fugit repellat iste fugiat laborum recusandae, aspernatur numquam natus sunt, tempore vel sequi rerum nobis voluptatibus quas, a adipisci porro.</p>
@@ -102,7 +101,7 @@
             rounded-md">Let's talk</a> </div>
         </div>
       </div>
-      <div class="mb-12 mt-8 md:mb-0 md:w-1/2  md:order-2 flex justify-start items-center lg:mt-10 xl:mt-20">
+      <div class="mb-12 mt-8 md:mb-0 md:w-1/2 lg:w-[45%] xl:w-[40%] md:order-2 flex justify-start items-center lg:mt-10 xl:mt-20 ">
         <img src="./assets/leo_favale_bn.png"   />
       </div>
   <div class="mt-24 mb-24 md:my-0 order-4 md:absolute bottom-8 w-44 flex justify-between">
@@ -137,12 +136,6 @@
            ">
             <i class='bx bxl-<%=social%>'></i>
           </a>
-          <%# <a  href="#" class=" relative flex justify-center items-center w-10 h-10 bg-transparent text-[--main-color]  p-0 text-lg border-2 rounded-full border-[--main-color] before:content-[''] before:bg-red-500 before:overflow-hidden ">
-            <i class='bx bxl-twitter'></i>
-          </a>
-          <a  href="#" class=" relative flex justify-center items-center w-10 h-10 bg-transparent text-[--main-color]  p-0 text-lg border-2 rounded-full border-[--main-color] before:content-[''] before:bg-red-500 before:overflow-hidden ">
-            <i class='bx bxl-linkedin'></i>
-          </a> %>
       <% end %>
       </div>
 
@@ -151,5 +144,207 @@
 
       <%= yield %>
     </main>
+
+
+
+
+
+<%# My Skills %>
+
+ <section id="skills" class=" p-10 sm:p-16 md:p-20   bg-[--second-bg-color] flex flex-col items-center justify-center">
+    <h2 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl  font-bold leading-relaxed mb-12 md:mb-24"> My <span class="text-[--main-color]">Skills</span></h2>
+    <div class="   flex flex-col md:flex-row w-full md:space-x-12 lg:justify-around ">
+      <div class="   w-full md:w-1/2 lg:w-[40%] mb-12">
+        <h3 class="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4">Coding Skills</h3>
+        <%# <div class="border-l-2 border-[--main-color] pl-3"> %>
+        <%
+          coding_skills = []
+          coding_skills.push(
+            {title: "Ruby on Rails", percentage: 70},
+            {title: "React", percentage: 65},
+            {title: "Node", percentage: 60},
+            {title: "HTML / CSS", percentage: 95},
+          )
+        %>
+          <div class="relative p-4 border-2 border-[--main-color] rounded space-y-4">
+            <% coding_skills.each do | entry |%>
+            <div class="">
+              <div class="flex flex-row justify-between">
+                <h4 class="text-sm sm:text-base  font-bold "><%= entry[:title]  %></h4>
+                <span class="font-bold" ><%= entry[:percentage] %></span>
+              </div>
+                <div class="text-[--main-color] border-2 border-[--main-color] flex p-1 " >
+                  <span class="bg-[--main-color] h-2 " style="width:<%= entry[:percentage] %>%"></span>
+                </div>
+            </div>
+            <% end %>
+          </div>
+        <%# </div> %>
+      </div>
+
+      <div class=" w-full md:w-1/2 lg:w-[40%] ">
+        <h3 class="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4">Proffesional Skills</h3>
+
+        <div class="relative p-4 border-2 border-[--main-color] rounded space-y-4">
+            <% coding_skills.each do | entry |%>
+            <div class="">
+              <div class="flex flex-row justify-between">
+                <h4 class="text-sm sm:text-base  font-bold "><%= entry[:title]  %></h4>
+                <span class="font-bold" ><%= entry[:percentage] %></span>
+              </div>
+                <div class="text-[--main-color] border-2 border-[--main-color] flex p-1 " >
+                  <span class="bg-[--main-color] h-2 " style="width:<%= entry[:percentage] %>%"></span>
+                </div>
+            </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section id="education" class=" p-10 sm:p-16 md:p-20  bg-[--bg-color] flex flex-col items-center justify-center">
+    <h2 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl  font-bold leading-relaxed mb-12 md:mb-24"> My <span class="text-[--main-color]">Journey</span></h2>
+    <div class="   flex flex-col md:flex-row w-full ">
+      <div class="  mr-6 w-full md:w-1/2 mb-12">
+        <h3 class="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4">Education</h3>
+        <div class="border-l-2 border-[--main-color] pl-3">
+   <%       education_entries = []
+            education_entries.push(
+              {date: "2023-2024", title: "Certified Tech Developer", text: "Digital House"},
+              {date: "2023", title: "Ruby on Rails 7 Course", text: "Mix and Go"},
+              {date: "2011-2015", title: "Information Technologist", text: "Intitution:   CURE - UDELAR"}
+              )
+ education_entries.each do | entry |%>
+          <div class="relative p-4 m-2 border-2 border-[--main-color] rounded before:w-4 before:h-4 before:rounded-full before:bg-[--main-color] before:block before:absolute before:top-[-2px] before:left-[-30px]">
+            <div class="text-[--main-color] flex space-x-2 items-center" >
+
+                  <svg class="w-4 h-4 text-[--main-color] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm14-7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4Z"/>
+                  </svg>
+              <span><%= entry[:date] %></span>
+              </div>
+            <h3 class="text-sm md:text-base lg:text-xl xl:text-2xl font-bold "><%= entry[:title]  %></h3>
+            <p class="text-sm md:text-base " ><%= entry[:text]  %></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class=" w-full md:w-1/2">
+        <h3 class="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4">Experience</h3>
+        <div class="border-l-2 border-[--main-color] pl-3">
+          <% experience_entries = []
+            experience_entries.push(
+              {date: "2022-2023", title: "The Sandbox", text: "Full Stack Developer"},
+              {date: "2018-2022", title: "Cualit", text: "Full Stack Developer"}
+              )
+ experience_entries.each do | entry |%>
+          <div class="relative p-4 m-2 border-2 border-[--main-color] rounded before:w-4 before:h-4 before:rounded-full before:bg-[--main-color] before:block before:absolute before:top-[-2px] before:left-[-30px]">
+            <div class="text-[--main-color] flex space-x-2 items-center" >
+
+                  <svg class="w-4 h-4 text-[--main-color] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm14-7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4Z"/>
+                  </svg>
+              <span><%= entry[:date] %></span>
+              </div>
+            <h3 class="text-sm md:text-base lg:text-xl xl:text-2xl font-bold "><%= entry[:title]  %></h3>
+            <p class="text-sm md:text-base " ><%= entry[:text]  %></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section id="contact" class=" p-10 sm:p-16 md:p-20  bg-[--second-bg-color] flex flex-col items-center justify-center">
+    <h2 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl  font-bold leading-relaxed mb-12 md:mb-24"> Contact <span class="text-[--main-color]">Me</span></h2>
+      <div class="w-full md:w-[85%] lg:w-2/3">
+
+        <form  class="flex
+        flex-col
+        md:flex-row
+        flex-wrap
+        justify-between
+        [&>input]:w-full
+        [&>input]:md:w-[48%]
+        [&>input]:pr-2
+        [&>input]:px-2
+        [&>input]:py-2
+        [&>input]:my-2
+        [&>input]:bg-transparent
+        [&>input]:border-2
+        [&>input]:rounded
+        [&>input]:border-[--main-color]
+        [&>input]:placeholder-white
+
+        focus:[&>input]:border-[--main-color]
+        focus:[&>input]:ring-[--main-color]
+
+        [&>textarea]:w-full
+        [&>textarea]:pr-2
+        [&>textarea]:px-2
+        [&>textarea]:py-2
+        [&>textarea]:my-2
+        [&>textarea]:bg-transparent
+        [&>textarea]:border-2
+        [&>textarea]:rounded
+        [&>textarea]:border-[--main-color]
+        [&>textarea]:placeholder-white
+        ">
+
+          <input type="text" class="" name="name" placeholder="Full Name">
+          <input type="email" class="" name="email" placeholder="Email Address">
+          <input type="text" class="" name="phone_number" placeholder="Mobile Number">
+          <input type="text" class="" name="subject" placeholder="Email Subject">
+          <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+          <div class=" flex w-full justify-center h-10">
+
+          <button  type="submit" class="
+            before:content-['']
+            before:absolute
+            before:top-0
+            before:left-0
+            before:w-0
+            before:h-full
+            before:bg-[--second-bg-color]
+            before:-z-10
+            hover:before:w-full
+            hover:text-[--main-color]
+            before:transition-all
+            z-10
+            overflow-hidden
+            text-base
+            md:text-lg
+            font-semibold
+            text-[--bg-color]
+            relative
+            inline-flex
+            justify-center
+            items-center
+            w-28
+            md:w-32
+            lg:w-36
+            h-full
+            bg-[--main-color]
+            border-[--main-color]
+            border-2
+            rounded-md">Submit</button>
+          </div>
+        </form>
+      </div>
+  </section>
+  <footer class="p-10 sm:p-16 md:p-20  bg-[--bg-color] flex flex-col items-center justify-center">
+<p>Copyright © 2023 by Ldfavale | All rights reserved.</p>
+  </footer>
+
   </body>
+  <script>
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("header").style.backgroundColor = "#171C2699";
+      } else {
+        document.getElementById("header").style.backgroundColor = "transparent";
+      }
+}
+  </script>
 </html>
